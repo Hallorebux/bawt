@@ -1,14 +1,19 @@
 package de.hallorebux.bawt;
 
+import com.sun.istack.internal.NotNull;
+
 import javax.swing.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 /**
  * @author Nils Osswald
  */
 public final class Frame extends JFrame
 {
-    private Screen currentScreen;
     private boolean debugMode;
+
+    private Screen currentScreen;
 
     public Frame(String title, int width, int height, boolean resizable, boolean borderless)
     {
@@ -16,9 +21,19 @@ public final class Frame extends JFrame
         this.setSize(width, height);
         this.setResizable(resizable);
         this.setUndecorated(borderless);
+        // center frame on screen
+        this.setLocationRelativeTo(null);
 
-        // set default screen
         setScreen(new Screen.Empty());
+
+        this.addKeyListener(new KeyAdapter()
+        {
+            @Override
+            public void keyPressed(KeyEvent e)
+            {
+                currentScreen.allComponents().forEach(c -> c.keyTyped(e));
+            }
+        });
     }
 
     public Frame()
@@ -36,14 +51,29 @@ public final class Frame extends JFrame
         this(title, width, height, true, false);
     }
 
-    public void setScreen(Screen screen)
+    /**
+     * Changes the current {@link Screen}
+     *
+     * @param screen the new {@link Screen}
+     */
+    public void setScreen(@NotNull Screen screen)
     {
         if (currentScreen != null)
             currentScreen.exit();
 
+        screen.setFrame(this);
+        screen.init();
         currentScreen = screen;
-        currentScreen.setFrame(this);
-        currentScreen.init();
+
+        this.setContentPane(screen);
+
+        this.repaint();
+        this.revalidate();
+    }
+
+    public boolean isBorderless()
+    {
+        return this.isUndecorated();
     }
 
     public Screen getCurrentScreen()

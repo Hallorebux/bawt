@@ -2,6 +2,9 @@ import de.hallorebux.bawt.Frame;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * @author Nils Osswald
+ */
 public final class ScreenTests
 {
     @Test

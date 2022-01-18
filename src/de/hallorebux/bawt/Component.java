@@ -1,6 +1,6 @@
 package de.hallorebux.bawt;
 
-import java.awt.*;
+import java.awt.Point;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
@@ -20,6 +20,9 @@ public abstract class Component
         this.height = height;
     }
 
+    /**
+     * @return If its bounding box contains the mouse cursor
+     */
     protected boolean isHovered()
     {
         final Point point = screen.getMousePosition();

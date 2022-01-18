@@ -42,7 +42,7 @@ public final class FrameTests
         boolean borderless = true;
         Frame frame = new Frame("Borderless Frame", 100, 60, true, true);
 
-        Assertions.assertEquals(frame.isUndecorated(), borderless);
+        Assertions.assertEquals(frame.isBorderless(), borderless);
     }
 
     @Test

@@ -1,4 +1,5 @@
 import de.hallorebux.bawt.Component;
+import de.hallorebux.bawt.Graphics;
 import de.hallorebux.bawt.SizeReference;
 
 import java.awt.*;
@@ -16,7 +17,10 @@ public final class SimpleComponent extends Component
     }
 
     @Override
-    public void paint(Graphics graphics) { }
+    public void paint(Graphics graphics)
+    {
+        graphics.drawRect(x, y, width, height, new Color(200, 200, 200));
+    }
 
     @Override
     public void mouseClicked(MouseEvent event) { }
