@@ -24,7 +24,7 @@ The simplified constructors use default values for each of the parameters:
 - *resizable*: `true`
 - *borderless*: `false`
 
-Once the constructor gets called, the window is initialized with an empty screen, and bound to the center of the currently active screen via
+Once the constructor gets called, the window is initialized with an empty screen, and bound to the center of the currently active screen using
 ```java
 setLocationRelativeTo(null);
 ```
@@ -46,8 +46,8 @@ This function is used to change the active screen that is being managed and rend
 
 #### Return Type:
 
-Nothing.
+void
 
 ## What's next?
 
-Continue by reading the documentation for `Screen` [here](screens.md).
+Continue by adding a custom `Screen` to your frame. Continue reading [here](screens.md).
