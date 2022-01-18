@@ -5,6 +5,8 @@ import com.sun.istack.internal.NotNull;
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  * @author Nils Osswald
@@ -32,6 +34,15 @@ public final class Frame extends JFrame
             public void keyPressed(KeyEvent e)
             {
                 currentScreen.allComponents().forEach(c -> c.keyTyped(e));
+            }
+        });
+
+        this.addWindowListener(new WindowAdapter()
+        {
+            @Override
+            public void windowClosing(WindowEvent e)
+            {
+                currentScreen.exit();
             }
         });
     }
