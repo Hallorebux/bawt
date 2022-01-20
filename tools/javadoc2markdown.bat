@@ -1,2 +1,2 @@
-kotlinc -script javadoc2markdown.kts "..\src\de\hallorebux\bawt\Frame.java" "..\docs\classes"
+kotlinc -script javadoc2markdown.kts "..\src\de\hallorebux\bawt" "..\docs\classes"
 pause
