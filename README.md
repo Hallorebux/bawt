@@ -35,12 +35,15 @@ The documentation and further examples for BAWT can be found in the [docs](/docs
 
 The documentation is divided into multiple sections:
 
-* Setting up a `Frame`: [frames.md](docs/frames.md)
-* Creating a `Screen`: [screens.md](docs/screens.md)
-* Sizing guide: [sizing.md](docs/sizing.md)
-* Creating custom `Component`s: [components.md](docs/components.md)
+* Creating a `Frame` and adding a `Screen`: [getting_started.md](docs/getting_started.md)
+* Creating custom `Component`s: [component_guide.md](docs/component_guide.md)
+* Using `relative` and `absolute` sizes: [sizing_guide.md](docs/sizing_guide.md)
 * Using built-in `Component`s: [default_components.md](docs/default_components.md)
-* Implementing different `Theme`s: [themes.md](docs/themes.md)
+* Implementing different `Theme`s: [theme_guide.md](docs/theme_guide.md)
+
+> Documentation for single classes can be found [here](docs/classes)
+
+> JavaDoc exports are located [here](docs/javadoc)
 
 ## 🧩 Examples
 
